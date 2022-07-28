@@ -1,0 +1,55 @@
+authService:
+  repository: sourcefuse/bizbook-bizbook-auth-service
+  pullPolicy: IfNotPresent
+  tag: "dev-42"
+  replicaCount: 2
+  affinity: {}
+  tolerations: []
+  Resources:
+    requests:
+      memory: "128mi"
+      cpu: "500m"
+    limits:
+      memory: "128mi"
+      cpu: "500m"
+  Service:
+    type: ClusterIP
+    port: 3000
+    targetPort: 3000
+    protocol: TCP
+  autoscaling:
+    enabled: true
+    minReplicas: 2
+    maxReplicas: 20
+    targetCPUUtilizationPercentage: 75
+    targetMemoryUtilizationPercentage: 80
+  db_schema: main
+  db_name: bizbook_auth
+
+accountingService:
+  repository: sourcefuse/bizbook-bizbook-accounting-system-adapter-service
+  pullPolicy: IfNotPresent
+  tag: "dev-42"
+  replicaCount: 2
+  affinity: {}
+  tolerations: []
+  Resources:
+    requests:
+      memory: "128mi"
+      cpu: "500m"
+    limits:
+      memory: "128mi"
+      cpu: "500m"
+  Service:
+    type: ClusterIP
+    port: 3000
+    targetPort: 3000
+    protocol: TCP
+  autoscaling:
+    enabled: true
+    minReplicas: 2
+    maxReplicas: 20
+    targetCPUUtilizationPercentage: 75
+    targetMemoryUtilizationPercentage: 80
+  db_schema: main_accounting
+  db_name: bizbook_accounting
