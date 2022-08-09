@@ -1,7 +1,7 @@
 authService:
   repository: sourcefuse/bizbook-bizbook-auth-service
   pullPolicy: IfNotPresent
-  tag: "dev-42"
+  tag: "54"
   replicaCount: 2
   affinity: {}
   tolerations: []
@@ -25,7 +25,6 @@ authService:
     targetMemoryUtilizationPercentage: 80
   db_schema: main
   db_name: bizbook_auth
-
 accountingService:
   repository: sourcefuse/bizbook-bizbook-accounting-system-adapter-service
   pullPolicy: IfNotPresent
