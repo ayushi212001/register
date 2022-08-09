@@ -1,7 +1,7 @@
 authService:
   repository: sourcefuse/bizbook-bizbook-auth-service
   pullPolicy: IfNotPresent
-  tag: "54"
+  tag: "57"
   replicaCount: 2
   affinity: {}
   tolerations: []
@@ -28,7 +28,7 @@ authService:
 accountingService:
   repository: sourcefuse/bizbook-bizbook-accounting-system-adapter-service
   pullPolicy: IfNotPresent
-  tag: "dev-42"
+  tag: "57"
   replicaCount: 2
   affinity: {}
   tolerations: []
